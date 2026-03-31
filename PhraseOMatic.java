@@ -2,11 +2,11 @@ public class PhraseOMatic {
     public static void main (String[] args) {
         
         // Three sets of words to choose from
-        String[] wordListOne = {"",""};
+        String[] wordListOne = {"agnostic", "opinionated", "voice activated", "haptically driven", "extensible", "reactive", "agent based", "functional", "AI enabled", "strongly typed"};
 
-        String[] wordListTwo = {"",""};
+        String[] wordListTwo = {"loosely coupled", "six sigma", "asynchronous", "event driven", "pub-sub", "IoT", "cloud native", "service oriented", "containerized", "serverless", "microservices", "distributed ledger"};
 
-        String[] wordListThree = {"",""};
+        String[] wordListThree = {"framework", "library", "DSL", "REST API", "repository", "pipeline", "service mesh", "architecture", "perspective", "design", "orientation"};
 
         // find out how many word are in each list
         int oneLength = wordListOne.length;
