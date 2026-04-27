@@ -11,12 +11,44 @@ public class GuessMyNumber {
             System.out.print("Type a number: ");
             int guess = in.nextInt();
             
-            System.out.printf("Your guess is: %d%n", guess);
-            System.out.printf("The number I was thinking of is: %d%n", number);
+            if (guess == number) {
+                System.out.printf("Correct! it was %d!%n", number);
+                return;
+            }      
+            if (guess > number) {
+                System.out.println("Too high!");
+            } else {
+                System.out.println("Too low!");
+            }
             
-            int difference = Math.abs(number - guess);
-            System.out.printf("You were off by: %d%n", difference);
+            // Second attempt
+            System.out.print("Try again: ");
+            guess = in.nextInt();
+
+            if (guess == number) {
+                System.out.printf("Correct! it was %d!%n", number);
+                return;
+            }
+             if (guess > number) {
+                System.out.println("Too high!");
+            } else {
+                System.out.println("Too low!");
+            }
             
-            
+            // Third attempt
+             System.out.print("Last try: ");
+            guess = in.nextInt();
+
+            if (guess == number) {
+                System.out.printf("Correct! it was %d!%n", number);
+                return;
+            }
+             if (guess > number) {
+                System.out.println("Too high!");
+            } else {
+                System.out.println("Too low!");
+            }
+            System.out.printf("Incorrect three times, the number was %d%n!", number);
+       
     }
 }
