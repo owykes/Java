@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Abecedarian {
     public static boolean isAbecedarian(String word){
         char prev = word.charAt(0);
@@ -15,7 +17,10 @@ public class Abecedarian {
     }
 
     public static void main(String[] args) {
-        System.out.println(isAbecedarian("able"));
+        Scanner in = new Scanner(System.in);
+        System.out.print("Type a word: ");
+        String word = in.nextLine();
+        System.out.println(isAbecedarian(word));
     }
 
 }
