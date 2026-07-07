@@ -26,3 +26,4 @@ public class Doubloon {
         System.out.println(isDoubloon(word));
     }
 }
+

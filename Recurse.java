@@ -30,23 +30,51 @@ public class Recurse {
      * 
      */
     public static void printString(String s) {
-        for (char letter : s.toCharArray()) {
-            System.out.println(letter);
-        } 
+        if (s.length() == 0) {
+            return;
+        }
+        System.out.println(first(s));
+        printString(rest(s));
 
     }
 
-    public static void reverseString(String s) {
+    public static void printBackward(String s) { 
+         if (s.length() == 0) {
+            return;
+        }
+        printBackward(rest(s));
+        System.out.println(first(s));
+    }    
+
+    public static String reverseString(String s) {
+        if (length(s) == 0) {
+            return "";
+        }
+        return reverseString(rest(s)) + first(s);
+    }
+
+    public static boolean isPalindrome(String s) {
+        if (length(s) <= 1) {
+            return true;
+        }
+        /* had to use java method charisat, due to ambigous excercise constriants or flaw */
+        if (first(s) != s.charAt(length(s)-1)) {
+            return false;
+        }
         
-    
+        return isPalindrome(middle(s));
     }
+    
+    
     public static void main(String[] args) {
         String test = "It's very hot today, I think I might melt";
+        printString(test);
+        printBackward(test);
         System.out.println(first(test));
         System.out.println(rest(test));
         System.out.println(middle(test));
         System.out.print(length(test));
-    
+        
     }
 }
 
