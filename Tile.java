@@ -19,11 +19,11 @@ public class Tile {
     }
 
     //setters
-    public void setLetter() {
+    public void setLetter(char letter) {
         this.letter = letter;
     }
 
-    public void setValue() {
+    public void setValue(int value) {
         this.value = value;
     }
 
@@ -42,7 +42,6 @@ public class Tile {
 
     }
 
-    
     public static void main(String[] args) {
         Tile tile = new Tile('Z', 10);   
         printTile(tile); 
