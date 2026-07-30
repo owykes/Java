@@ -1,5 +1,3 @@
-
-
 public class Rational {
     // instance variables
     private int numerator;
