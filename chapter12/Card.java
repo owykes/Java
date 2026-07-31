@@ -23,9 +23,7 @@ public class Card {
         this.rank = rank;
         this.suit = suit;
     }
-
  
-
     public Card[] makeDeck() {
         Card[] cards = new Card[52];
         int index = 0;
@@ -38,6 +36,58 @@ public class Card {
         return cards;
     }
 
+    public int[] suitHist(Card[] cards) {       
+        int [] counts = new int[4];
+        for (int i = 0; i < cards.length; i++) {
+            int index = cards[i].getSuit();
+            counts[index]++;
+        }
+        return counts;
+
+    }
+
+    public boolean hasFlush(Card[] cards) {
+        int[] suitCounts = suitHist(cards); 
+        for (int count : suitCounts) {
+            if (count >= 5) {
+                return true;
+                }
+            }
+        
+        return false;
+        }
+
+    private int findFlushSuit(Card[] cards) {
+        int[] suitCounts = suitHist(cards); 
+        int maxIndex = 0;
+        for (int i = 0; i < suitCounts.length; i++) {
+            if (suitCounts[i] > suitCounts[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+            return maxIndex;
+    }
+
+    public boolean hasRoyal(Card[] cards) {
+        int suit = findFlushSuit(cards);
+        int[] suitCounts = suitHist(cards);
+        
+        if (suitCounts[suit] < 5) {
+            return false; 
+            }
+        
+        boolean ten, jack, queen, king, ace;
+        ten = jack = queen = king = ace = false;
+
+        for (Object elem : col) {
+            
+        }
+        
+
+    }
+        
+       
+    
    /**
      * Returns a negative integer if this card comes before
      * the given card, zero if the two cards are equal, or
