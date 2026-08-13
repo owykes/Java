@@ -1,6 +1,6 @@
 package algorithms.searching;
 
-import utils.Helper;
+import algorithms.utils.Helper;
 
 public class LinearSearch {
 
@@ -14,8 +14,8 @@ public class LinearSearch {
     }
 
     public static void main(String[] args) {
-        int target = getTarget();
-        int[] array = generateList(); 
+        int[] array = Helper.generateList(10); 
+        int target = Helper.getTarget(array);
         int result = algorithm(array, target);
 
     }
